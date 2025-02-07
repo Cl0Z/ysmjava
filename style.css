@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities{
+
+    .card-wrapper{
+        @apply relative bg-gradient-to-b from-slate-700 to-slate-800 rounded-2xl; 
+    }
+
+    .card-wrapper::before {
+        background: conic-gradient(
+            rgba(186, 222, 255, 0.4) 0deg,
+            rgba(255, 186, 222, 0.4) 0deg,
+            transparent 80deg
+        );
+        @apply absolute h-[150%] w-[150%] top-[25%] left-[25%] content-[''] animate-border-spin;
+    }
+
+    .card-content{
+        @apply absolute w-[calc(100%-2px)] h-[calc(100%-2px)]
+    }
+    
+}
